@@ -10,9 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_15_111756) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_15_185408) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bank_accounts", force: :cascade do |t|
+    t.string "full_name"
+    t.integer "account_number"
+    t.string "sort_code"
+    t.bigint "user_id", null: false
+    t.string "bank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bank_accounts_on_user_id"
+  end
+
+  create_table "pot_members", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "pot_id", null: false
+    t.bigint "request_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["request_id"], name: "index_pot_members_on_request_id"
+  end
+
+  create_table "pots", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.float "total_amount"
+    t.boolean "cleared"
+    t.bigint "creator_id", null: false
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_pots_on_creator_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.string "message"
+    t.float "amount"
+    t.boolean "paid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +62,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_111756) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username", null: false
+    t.string "paypal"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bank_accounts", "users"
+  add_foreign_key "pot_members", "requests"
+  add_foreign_key "pots", "users", column: "creator_id"
 end
