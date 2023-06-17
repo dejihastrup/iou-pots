@@ -1,2 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container mt-5">
+  <h2 id="home-intro">Sort your payments and collections with ease.</h2>
+  <% if current_user %>
+    <%# <%= link_to new_user_session, "Get Started",   %>
+  <% else %>
+    <%= link_to "Get Started", new_user_session_path, class: "btn btn-warning" %>
+  <% end %>
+</div>
