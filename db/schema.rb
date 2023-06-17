@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_15_185408) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_15_190355) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_185408) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_bank_accounts_on_user_id"
+  end
+
+  create_table "payments_tables", force: :cascade do |t|
+    t.float "amount"
+    t.bigint "request_id", null: false
+    t.bigint "sender_account_id", null: false
+    t.bigint "reciever_account_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reciever_account_id"], name: "index_payments_tables_on_reciever_account_id"
+    t.index ["request_id"], name: "index_payments_tables_on_request_id"
+    t.index ["sender_account_id"], name: "index_payments_tables_on_sender_account_id"
   end
 
   create_table "pot_members", id: false, force: :cascade do |t|
@@ -69,6 +81,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_185408) do
   end
 
   add_foreign_key "bank_accounts", "users"
+  add_foreign_key "payments_tables", "bank_accounts", column: "reciever_account_id"
+  add_foreign_key "payments_tables", "bank_accounts", column: "sender_account_id"
+  add_foreign_key "payments_tables", "requests"
   add_foreign_key "pot_members", "requests"
   add_foreign_key "pots", "users", column: "creator_id"
 end
