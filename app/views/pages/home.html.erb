@@ -1,8 +1,17 @@
-<div class="container mt-5">
-  <h2 id="home-intro">Sort your payments and collections with ease.</h2>
-  <% if current_user %>
-    <%# <%= link_to new_user_session, "Get Started",   %>
-  <% else %>
-    <%= link_to "Get Started", new_user_session_path, class: "btn btn-warning" %>
-  <% end %>
+<div class="home-container container d-flex justify-content-around align-items-center mt-3">
+  <div class="ml-2">
+    <h2 id="home-intro">Sort your payments and collections with ease.</h2>
+    <% if current_user %>
+      <%# <%= link_to new_user_session, "Get Started",   %>
+    <% else %>
+      <%= link_to "Get Started", new_user_session_path, class: "cta-home" %>
+    <% end %>
+  </div>
+  <%= image_tag "pot-icon.png", class: "pot-icon"  %>
+</div>
+
+<div class="container">
+	<div class="field">
+		<div class="scroll"></div>
+	</div>
 </div>

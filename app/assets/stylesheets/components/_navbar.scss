@@ -1,12 +1,33 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  justify-content: flex-end;
+  background: $black;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
+.logo {
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  left: 46.5%;
+}
+.logo div {
+  width: 60px;
+}
+#logo-o {
+  font-weight: 600;
+  color: #EEC643;
+}
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.container-fluid {
+  justify-content: flex-end !important;
+}
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #EEC643 !important;
 }
