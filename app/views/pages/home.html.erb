@@ -12,6 +12,28 @@
 
 <div class="container">
 	<div class="field">
+  <%= link_to "#second-page" do  %>
 		<div class="scroll"></div>
+  <% end %>
 	</div>
 </div>
+
+<section id="second-page">
+  <div class="hiw container text-center" data-controller="instructions-animation">
+    <h3>How it works</h3>
+    <div class="d-flex containter justify-content-around h-5">
+      <div class="instruction create animate-on-scroll" data-instructions-animation-target="create">
+        <h4>Create a pot</h4>
+        <%= image_tag "pot-full-of-gold.png", class: "pog-icon" %>
+      </div>
+      <div class="instruction add animate-on-scroll" data-instructions-animation-target="add">
+        <h4 id="add-ff">Add <br>Family & Friends</h4>
+        <%= image_tag "add-group.png", class: "pog-icon" %>
+      </div>
+      <div class="instruction pay animate-on-scroll" data-instructions-animation-target="pay">
+        <h4 id="add-ff">Make <br>Requests & Payments</h4>
+        <%= image_tag "money-bag.png", class: "pog-icon" %>
+      </div>
+    </div>
+  </div>
+</section>

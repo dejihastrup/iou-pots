@@ -9,3 +9,66 @@
 .home-container {
   width: 670px;
 }
+
+.instruction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  // padding: 90px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #EEC643;
+  text-align: center;
+}
+
+#add-ff {
+  margin-top: -20px;
+}
+.instruction h4 {
+  font-weight: 300 !important;
+  font-size: large !important;
+}
+.hiw {
+  color: white;
+  height: 100vh;
+}
+
+.hiw h3 {
+  padding-top: 35px;
+  padding-bottom: 62px;
+}
+
+.pog-icon {
+  margin-top: 8px;
+  width: 45px;
+  width: 45px;
+}
+
+
+.create {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: all 0.8s ease-out;
+  transition-delay: 0.2s;
+}
+
+.add {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: all 0.8s ease-out;
+    transition-delay: 0.8s;
+}
+
+.pay {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: all 0.8s ease-out;
+    transition-delay: 1.6s;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}

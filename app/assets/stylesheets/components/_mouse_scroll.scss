@@ -31,10 +31,10 @@ body {
   &::before {
     content: '';
     position: absolute;
-    top: 15px;
-    // left: 18px;
-    width: 18px;
-    height: 18px;
+    top: 7px;
+    left: 8px;
+    width: 13px;
+    height: 13px;
     border-left: 2px solid white;
     border-bottom: 2px solid white;
     transform: rotate(-45deg);
@@ -47,7 +47,7 @@ body {
   }
 
   20% {
-    transform: translateY(15px);
+    transform: translateY(8px);
   }
 
   40% {
