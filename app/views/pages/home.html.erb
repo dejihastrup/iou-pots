@@ -1,22 +1,24 @@
-<div class="home-container container d-flex justify-content-around align-items-center mt-3">
-  <div class="ml-2">
-    <h2 id="home-intro">Sort your payments and collections with ease.</h2>
-    <% if current_user %>
-      <%# <%= link_to new_user_session, "Get Started",   %>
-    <% else %>
-      <%= link_to "Get Started", new_user_session_path, class: "cta-home" %>
-    <% end %>
+<section id="first-page">
+  <div class="home-container container d-flex justify-content-around align-items-center pt-3">
+    <div class="ml-2">
+      <h2 id="home-intro">Sort your payments and collections with ease.</h2>
+      <% if current_user %>
+        <%# <%= link_to new_user_session, "Get Started",   %>
+      <% else %>
+        <%= link_to "Get Started", new_user_session_path, class: "cta-home" %>
+      <% end %>
+    </div>
+    <%= image_tag "pot-icon.png", class: "pot-icon"  %>
   </div>
-  <%= image_tag "pot-icon.png", class: "pot-icon"  %>
-</div>
 
-<div class="container">
-	<div class="field">
-  <%= link_to "#second-page" do  %>
-		<div class="scroll"></div>
-  <% end %>
-	</div>
-</div>
+  <div class="container">
+    <div class="field">
+    <%= link_to "#second-page" do  %>
+      <div class="scroll"></div>
+    <% end %>
+    </div>
+  </div>
+</section>
 
 <section id="second-page">
   <div class="hiw container text-center" data-controller="instructions-animation">
@@ -36,4 +38,9 @@
       </div>
     </div>
   </div>
+</section>
+
+<section>
+<div id="third-page">
+</div>
 </section>

@@ -1,16 +1,16 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "logo" do %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" data-controller="drop-coins">
+  <div class="container-fluid" data-drop-coins-target="container">
+    <button class="logo", data-action="click->drop-coins#fall">
     <div class="d-flex w-3 justify-content-around">
       <h3>I</h3><h3 id="logo-o">O</h3><h3>U</h3>
     </div>
-    <% end %>
+    </button>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
