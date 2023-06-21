@@ -1,8 +1,43 @@
-<div class="container mt-5">
-  <h2 id="home-intro">Sort your payments and collections with ease.</h2>
-  <% if current_user %>
-    <%# <%= link_to new_user_session, "Get Started",   %>
-  <% else %>
-    <%= link_to "Get Started", new_user_session_path, class: "btn btn-warning" %>
-  <% end %>
+<section id="first-page">
+  <div class="home-container container d-flex justify-content-center align-items-center pt-3">
+      <h2 id="home-intro">Sort your payments and collections with ease.</h2>
+  </div>
+
+  <div class="container coins-landing">
+   <% if current_user %>
+        <%# <%= link_to new_user_session, "Get Started",   %>
+      <% else %>
+        <%= link_to "Get Started", new_user_session_path, class: "cta-home" %>
+      <% end %>
+    <div class="field">
+    <%= link_to "#second-page" do  %>
+      <div class="scroll"></div>
+    <% end %>
+    </div>
+  </div>
+</section>
+
+<section id="second-page">
+  <div class="hiw container text-center" data-controller="instructions-animation">
+    <h3>How it works</h3>
+    <div class="d-flex containter justify-content-around h-5">
+      <div class="instruction create animate-on-scroll" data-instructions-animation-target="create">
+        <h4>Create a pot</h4>
+        <%= image_tag "pot-full-of-gold.png", class: "pog-icon" %>
+      </div>
+      <div class="instruction add animate-on-scroll" data-instructions-animation-target="add">
+        <h4 id="add-ff">Add <br>Family & Friends</h4>
+        <%= image_tag "add-group.png", class: "pog-icon" %>
+      </div>
+      <div class="instruction pay animate-on-scroll" data-instructions-animation-target="pay">
+        <h4 id="add-ff">Make <br>Requests & Payments</h4>
+        <%= image_tag "money-bag.png", class: "pog-icon" %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# <section>
+<div id="third-page">
 </div>
+</section> %>

@@ -1,14 +1,21 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" data-controller="drop-coins">
+  <div class="container-fluid" data-drop-coins-target="container">
+    <%= link_to root_path, class: "logo" do %>
+      <div class="d-flex w-3 justify-content-around">
+        <h3>I</h3><h3 id="logo-o">O</h3><h3>U</h3>
+      </div>
+    <% end %>
+    <% if params['action'] == 'home' %>
+      <button class="coin", data-action="click->drop-coins#fall">
+        <%= image_tag "pound-money.png", style: "width: 20px; height: 20px;" %>
+      </button>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">

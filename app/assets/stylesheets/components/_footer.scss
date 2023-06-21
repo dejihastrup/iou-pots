@@ -1,0 +1,32 @@
+.footer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8) );
+  flex-shrink: 0;
+  width: 100%;
+  // background-color: $black;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-content p {
+  margin-bottom: 5px !important;
+  font-size: 10px;
+  font-weight: 200;
+}
+
+#github:hover i {
+  color: rgb(11, 167, 11) !important;
+}
+
+#linkedin:hover i {
+  color: rgb(61, 32, 96) !important;
+}
