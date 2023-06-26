@@ -1,0 +1,81 @@
+.modal-content {
+  color: white;
+  width: 60% !important;
+}
+
+.modal-body {
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-header {
+  justify-content: center !important;
+  padding: 0 !important;
+  border-bottom: none !important;
+}
+
+.modal-header ul {
+  width: 100% !important;
+}
+
+.modal-header li {
+  width: 50% !important;
+}
+
+
+
+.modal-dialog-centered {
+  justify-content: center;
+}
+
+.form-control {
+  color: black !important;
+  background-color: #E7F0FE !important;
+  font-size: 8px !important;
+  width: 170px;
+}
+
+.form-control:focus {
+  border-color: #EEC643;
+  box-shadow: 0 0 0 0.25rem #eec64329;
+  font-size: 8px;
+}
+
+.form-actions input {
+  margin-top: 0px !important;
+}
+
+label abbr {
+  display: none;
+}
+
+.tab-pane .form-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-tabs {
+  --bs-nav-tabs-link-active-border-color: #EEC643 #EEC643 var(--bs-body-bg);
+    border-bottom: 1px solid #EEC643;
+}
+
+#signup-tab:hover, #login-tab:hover {
+    color: white;
+    border-color: var(--bs-body-bg) var(--bs-body-bg) #EEC643;
+}
+
+#signup-tab, #login-tab {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.355);
+}
+
+.nav-link.active {
+  color: white !important;
+}
+
+.active:hover {
+  border-color: #EEC643 #EEC643 var(--bs-body-bg) !important;
+}
