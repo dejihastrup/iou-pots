@@ -4,9 +4,9 @@
   </div>
 
   <div class="container coins-landing">
-   <% if current_user %>
-        <%# <%= link_to new_user_session, "Get Started",   %>
-      <% else %>
+    <% if current_user %>
+      <%= link_to "Dashboard", dashboard_path, class: "cta-home" %>
+    <% else %>
       <button type="button" class="cta-home" data-toggle="modal" data-target="#exampleModalCenter">
         Get Started
       </button>

@@ -1,6 +1,17 @@
 .modal-content {
   color: white;
-  width: 60% !important;
+  width: fit-content;
+}
+
+.inputs-format {
+    width: 360px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.submit {
+  width: 170px;
 }
 
 .modal-body {

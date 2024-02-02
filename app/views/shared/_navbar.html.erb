@@ -5,7 +5,7 @@
         <h3>I</h3><h3 id="logo-o">O</h3><h3>U</h3>
       </div>
     <% end %>
-    <% if params['action'] == 'home' %>
+    <% if params['action'] == 'home' && !(user_signed_in?) %>
       <button class="coin", data-action="click->drop-coins#fall">
         <%= image_tag "pound-money.png", style: "width: 20px; height: 20px;" %>
       </button>
@@ -19,18 +19,19 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "News", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: 'avatar', crop: :fill %>
+            <% else %>
+              <%= image_tag "user.png", class: "avatar" %>
+            <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Dashboard", "#", class: "dropdown-item" %>
+              <%= link_to "Pots", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

@@ -7,6 +7,11 @@
   flex-grow: 0;
 }
 
+.navbar {
+  height: 40px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+}
+
 .coin {
     background: none;
     border: none;
@@ -45,4 +50,23 @@
 
 .login:hover {
   color: #EEC643 !important;
+}
+
+
+.navbar-nav .nav-link {
+  color: white;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.navbar-collapse {
+  width: 150px;
+  ul {
+      display: flex;
+      justify-content: space-around;
+      width: inherit;
+      align-items: center;
+  }
 }
